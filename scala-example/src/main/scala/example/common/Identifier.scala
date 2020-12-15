@@ -1,10 +1,16 @@
 package example.common
 
-trait Identifer[+A] {
-    def value: A
+trait Identifer[+T] {
+    def value: T
 
-    override dev equals(that: Any) = that match {
+    val isDefined: Boolean = true
+
+    val isEmpty: Boolean = !isDefined
+
+    override def equals(that: Any) = that match {
         case that: Identifer[_] => value == that.value
         case _ => false
     }
+
+    override def hashCode: Int = 29 * value.##
 }
