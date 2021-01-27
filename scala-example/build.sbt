@@ -14,10 +14,10 @@ lazy val root = (project in file(".")).
       "com.typesafe.akka" %% "akka-actor-typed"         % akkaVersion,
       "com.typesafe.akka" %% "akka-stream"              % akkaVersion,
       "ch.qos.logback"    % "logback-classic"           % "1.2.3",
-      "net.petitviolet"   %% "ulid4s"                   % "v0.4.1",
+      "net.petitviolet"   %% "ulid4s"                   % "0.5.0",
 
-      "joda-time"         %% "joda-time"                 % "2.10.9",
-      "org.joda"          %% "joda-convert"              % "2.2.1",
+      "joda-time"         % "joda-time"                 % "2.10.9",
+      "org.joda"          % "joda-convert"              % "2.2.1",
 
       "com.typesafe.akka" %% "akka-http-testkit"        % akkaHttpVersion % Test,
       "com.typesafe.akka" %% "akka-actor-testkit-typed" % akkaVersion     % Test,
