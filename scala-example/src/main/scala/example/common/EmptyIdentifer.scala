@@ -13,4 +13,4 @@ trait EmptyIdentifer extends Identifer[Nothing] {
     override def hashCode = 0
 }
 
-object EmptyIdentifier extends EmptyIdentifer
+object EmptyIdentifer extends EmptyIdentifer

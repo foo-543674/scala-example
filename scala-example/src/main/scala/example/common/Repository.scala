@@ -3,8 +3,8 @@ package example.common
 import scala.util.Try
 import scala.collection.immutable.Seq
 
-trait Repository[ID <: Identifer[_], Entity <: Entity[ID], F[_]] {
-  def findById(id: EventId): F[Option[Entity]]
-  def list(entity: Entity): F[Seq[Entity]]
-  def store(entity: Entity): F[Try[Entity]]
+trait Repository[I <: Identifer[_], E <: Entity[I], F[_]] {
+  def findById(id: I): F[Option[E]]
+  def list(entity: E): F[Seq[E]]
+  def store(entity: E): F[Try[E]]
 }

@@ -1,7 +1,7 @@
 package example.common
 
 trait Entity[ID <: Identifer[_]] {
-    var id: ID
+    val id: ID
 
     override def equals(that: Any) = that match {
         case that: Entity[_] => that.isInstanceOf[this.type] && id == that.id

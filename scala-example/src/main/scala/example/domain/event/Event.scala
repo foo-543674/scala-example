@@ -7,4 +7,5 @@ case class Event(
     name: String,
     held: Held,
     description: String
-) extends Entity[EventId]
+) extends Entity[EventId] {
+}

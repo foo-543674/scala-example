@@ -1,6 +1,6 @@
 package example.common
 
-trait Identifier[+T] {
+trait Identifer[+T] {
     def value: T
 
     val isDefined: Boolean = true

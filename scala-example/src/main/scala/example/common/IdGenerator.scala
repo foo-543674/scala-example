@@ -1,5 +1,5 @@
 package example.common
 
-trait IdGenerator[ID <: Identifier[_]] {
+trait IdGenerator[ID <: Identifer[_]] {
     def generate(): String
 }
