@@ -1,5 +1,6 @@
 package example.domain.event
 
 import example.common.Identifer
+import example.common.Ulid
 
-case class EventId(ulid: String) extends Identifer[String]
+case class EventId(value: Ulid) extends Identifer[Ulid]
