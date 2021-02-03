@@ -1,3 +1,7 @@
 target/
 .metals/
 .vscode/
+
+*.class
+.idea
+target/
