@@ -5,13 +5,14 @@ import example.common.{IdGenerator, EmptyIdentifer}
 import scala.util.Try
 
 trait CreateEventUsecase[F[_]] {
+  def getRepository: EventRepository[F]
+  def getIdGenerator: IdGenerator[EventId]
+
   def save(
-      repository: EventRepository[F],
       param: CreateEventParameter,
-      idGenerator: IdGenerator[EventId]
-  ): F[Try[Event]] = repository.store(
+  ): F[Try[Event]] = getRepository.store(
     new Event(
-      idGenerator.generate,
+      getIdGenerator.generate,
       param.name,
       new Held(param.heldAt),
       param.description
