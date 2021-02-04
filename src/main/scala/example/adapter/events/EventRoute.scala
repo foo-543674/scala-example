@@ -20,6 +20,8 @@ class EventRoute(service: ActorRef[EventServiceCommand])(
   import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport._
     private implicit val timeout = Timeout.create(system.settings.config.getDuration("my-app.routes.ask-timeout"))
 
+  import EventJsonFormats._
+
   var routes: Route =
     pathPrefix("events") {
       concat(
@@ -27,7 +29,10 @@ class EventRoute(service: ActorRef[EventServiceCommand])(
           concat(
             post {
               entity(as[CreateEventParameter]) { param =>
-                onSuccess(service.ask(CreateEvent(param, _)))
+                onSuccess(service.ask(CreateEvent(param, _))) { result =>
+                  result.map(event => complete(StatusCodes.OK, event))
+                    .recover(_ => complete(StatusCodes.InternalServerError))
+                }
               }
             }
           )
