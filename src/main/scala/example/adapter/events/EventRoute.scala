@@ -33,6 +33,7 @@ class EventRoute(service: ActorRef[EventServiceCommand])(
         post {
           entity(as[CreateEventParameter]) { param =>
             onSuccess(service.ask(CreateEvent(param, _))) { result =>
+              //TODO: コンパイル失敗しないが、エディタ上で型エラーになってるので調査
               result.map(event => complete((StatusCodes.OK, event)))
                 .getOrElse(complete((StatusCodes.InternalServerError)))
             }
