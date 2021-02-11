@@ -1,6 +1,6 @@
-package example.domain.event
+package example.modules.event.domain
 
-import example.common._
+import example.common.domain.{Entity}
 
 case class Event(
     id: EventId,

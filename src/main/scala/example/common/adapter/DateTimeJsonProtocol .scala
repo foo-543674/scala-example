@@ -1,4 +1,4 @@
-package example.adapter.common
+package example.common.adapter
 
 import spray.json.DefaultJsonProtocol
 import spray.json.RootJsonFormat

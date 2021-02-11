@@ -1,4 +1,4 @@
-package example.adapter.events
+package example.modules.event.adapter
 
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.model.StatusCodes
@@ -11,10 +11,9 @@ import akka.util.Timeout
 import scala.concurrent.Future
 import scala.concurrent.ExecutionContext
 
-import example.domain.event.EventRepository
-import example.usecases.event.CreateEventParameter
+import example.modules.event.domain.{Event, EventRepository}
+import example.modules.event.usecases.{CreateEventParameter}
 import scala.util.Try
-import example.domain.event.Event
 import scala.util.Success
 
 class EventRoute(service: ActorRef[EventServiceCommand])(

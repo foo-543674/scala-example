@@ -1,6 +1,6 @@
-package example.domain.event
+package example.modules.event.domain
 
-import example.common.{IdGenerator, Ulid}
+import example.common.domain.{IdGenerator, Ulid}
 import net.petitviolet.ulid4s.ULID
 
 class EventIdGenerator extends IdGenerator[EventId] {

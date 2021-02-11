@@ -1,4 +1,4 @@
-package example.usecases.event
+package example.modules.event.usecases
 
 import org.joda.time.{DateTime}
 

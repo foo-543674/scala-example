@@ -1,7 +1,7 @@
-package example.usecases.event
+package example.modules.event.usecases
 
-import example.domain.event.{Event, EventId, EventRepository, Held}
-import example.common.{IdGenerator, EmptyIdentifer}
+import example.modules.event.domain.{Event, EventId, EventRepository, Held}
+import example.common.domain.{IdGenerator, EmptyIdentifer}
 import scala.util.Try
 
 trait CreateEventUsecase[F[_]] {

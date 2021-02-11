@@ -1,17 +1,13 @@
-package example.adapter.events
+package example.modules.event.adapter
 
 import akka.actor.typed.ActorRef
 import akka.actor.typed.Behavior
 import akka.actor.typed.scaladsl.Behaviors
 import scala.collection.immutable
-import example.domain.event.EventRepository
 import scala.concurrent.Future
-import example.usecases.event.CreateEventUsecase
-import example.domain.event.EventIdGenerator
-import example.common.IdGenerator
-import example.domain.event.EventId
-import example.usecases.event.CreateEventParameter
-import example.domain.event.Event
+import example.common.domain.{IdGenerator}
+import example.modules.event.domain.{Event, EventId, EventIdGenerator, EventRepository}
+import example.modules.event.usecases.{CreateEventParameter, CreateEventUsecase}
 import scala.util.Try
 import scala.concurrent.ExecutionContext
 

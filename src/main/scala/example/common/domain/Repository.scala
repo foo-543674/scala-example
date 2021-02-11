@@ -1,4 +1,4 @@
-package example.common
+package example.common.domain
 
 import scala.util.Try
 import scala.collection.immutable.Seq

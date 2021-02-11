@@ -1,4 +1,4 @@
-package example.common
+package example.common.domain
 
 trait EmptyIdentifer extends Identifer[Nothing] {
     def value: Nothing = throw new NoSuchElementException

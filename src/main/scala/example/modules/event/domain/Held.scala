@@ -1,4 +1,4 @@
-package example.domain.event
+package example.modules.event.domain
 
 import org.joda.time.{DateTime}
 

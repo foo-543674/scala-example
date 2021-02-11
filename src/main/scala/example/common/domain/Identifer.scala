@@ -1,4 +1,4 @@
-package example.common
+package example.common.domain
 
 trait Identifer[+T] {
     def value: T
