@@ -11,6 +11,10 @@
 			"HOME": "/home/usr",
 		}
 	},
+	"runArgs": [
+		"--rm",
+		"--dns=8.8.8.8"
+	],
 	"remoteUser": "${localEnv:USER}",
 	"remoteEnv": {
 		"HOME": "/home/usr",
