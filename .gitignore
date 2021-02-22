@@ -7,4 +7,3 @@ metals.sbt
 *.class
 .idea
 target/
-localexec/
