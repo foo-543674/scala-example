@@ -5,6 +5,8 @@ services:
     image: confluentinc/cp-zookeeper:6.1.0
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
+    networks:
+      - scala-example
   kafka:
     image: confluentinc/cp-kafka:6.1.0
     depends_on:
@@ -12,6 +14,8 @@ services:
     environment:
       KAFKA_ZOOKEEPER_CONNECT: "zookeeper:2181"
       KAFKA_ADVERTISED_LISTENERS: "PLAINTEXT://kafka:9092"
+    networks:
+      - scala-example
   kafkaproxy:
     image: confluentinc/cp-kafka-rest:6.1.0
     depends_on:
@@ -21,6 +25,8 @@ services:
       KAFKA_REST_HOST_NAME: "kafkaproxy"
       KAFKA_REST_LISTENERS: "http://kafkaproxy:8082"
       KAFKA_REST_BOOTSTRAP_SERVERS: PLAINTEXT://kafka:9092
+    networks:
+      - scala-example
   kafka-topics:
     image: landoop/kafka-topics-ui:0.9.4
     depends_on:
@@ -30,3 +36,9 @@ services:
     environment:
       KAFKA_REST_PROXY_URL: "http://kafkaproxy:8082"
       PROXY: "true"
+    networks:
+      - scala-example
+
+networks:
+  scala-example:
+    external: true

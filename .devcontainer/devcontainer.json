@@ -13,7 +13,8 @@
 	},
 	"runArgs": [
 		"--rm",
-		"--dns=8.8.8.8"
+		"--dns=8.8.8.8",
+		"--network=scala-example"
 	],
 	"remoteUser": "${localEnv:USER}",
 	"remoteEnv": {
